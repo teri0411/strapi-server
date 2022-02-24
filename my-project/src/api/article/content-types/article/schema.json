@@ -12,36 +12,34 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true,
-      "unique": true
+    "body": {
+      "type": "richtext"
     },
-    "content": {
-      "type": "richtext",
-      "required": true
+    "tag": {
+      "type": "string"
+    },
+    "like": {
+      "type": "biginteger"
     },
     "view": {
-      "type": "integer",
-      "default": 0
+      "type": "biginteger"
     },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "articles"
+    "publish": {
+      "type": "boolean"
     },
-    "tags": {
+    "users_permissions_user": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::tag.tag",
-      "inversedBy": "articles"
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     },
     "comments": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::comment.comment",
       "mappedBy": "article"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

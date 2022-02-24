@@ -11,15 +11,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "comment": {
-      "type": "richtext",
-      "required": true
-    },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "comments"
+    "message": {
+      "type": "richtext"
     },
     "article": {
       "type": "relation",
